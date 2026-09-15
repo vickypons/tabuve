@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabuve</title>
+</head>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Indie+Flower&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+
+    .indie-flower-regular {
+        font-family: "Indie Flower", cursive;
+        font-weight: 400;
+        font-style: normal;
+    }
+
+
+    body {
+        font-family: "Indie Flower", cursive;
+        background-color: #f5f5f5;
+        color: #333;
+
+    }
+
+    header {
+        background-color: #a78b4d91;
+        color: white;
+        text-align: justify;
+        padding: 30px 20px;
+    }
+
+    main {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 30px 20px;
+    }
+
+    .grid-productos {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+
+    .producto {
+        background-color: white;
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+        display: flex;
+        flex-direction: column;
+        width: 250px;
+    }
+
+    .producto img {
+        width: 100%;
+        height: 220px;
+        object-fit: cover;
+    }
+
+    .producto-info {
+        padding: 15px;
+        display: flex;
+        flex-direction: column;
+        flex-grow: 1;
+    }
+
+
+    .producto-info p {
+        font-size: 0.9rem;
+        color: #666;
+        flex-grow: 1;
+        margin-bottom: 10px;
+    }
+
+    .precio {
+        font-size: 1.2rem;
+        font-weight: bold;
+        color: #be0505;
+        margin-bottom: 10px;
+    }
+
+    .boton-comprar {
+        background-color: antiquewhite;
+        color: rgb(0, 0, 0);
+        border: none;
+        padding: 10px;
+        border-radius: 6px;
+        font-size: 0.95rem;
+        cursor: pointer;
+    }
+
+    .boton-comprar:hover {
+        background-color: #e8b05c98;
+    }
+
+    footer {
+        text-align: center;
+        padding: 20px;
+        background-color: #333;
+        color: white;
+        margin-top: 40px;
+    }
+
+    .whatsapp {
+        display: flex;
+        justify-content: flex-end;
+        align-items: flex-end;
+        margin: 15px 0;
+        gap: 10px;
+    }
+
+    .whatsapp img {
+        width: 30px;
+    }
+
+    .whatsapp a {
+        text-decoration: none;
+        padding: 5px;
+        background-color: #81e98f;
+        border-radius: 8px;
+        color: white;
+
+    }
+
+    .mercadopago {
+        display: flex;
+        gap: 10px;
+        justify-content: flex-end;
+        align-items: flex-end;
+        margin: 15px 0;
+    }
+
+    .mercadopago a {
+        text-decoration: none;
+        padding: 5px;
+        background-color: #76cef7;
+        border-radius: 8px;
+        color: white;
+    }
+
+    .mercadopago img {
+        width: 30px;
+        border-radius: 8px;
+    }
+
+    .instagran {
+        display: flex;
+        gap: 10px;
+        justify-content: flex-end;
+        align-items: flex-end;
+        margin: 15px 0;
+    }
+
+    .instagran img {
+        width: 30px;
+        border-radius: 8px;
+    }
+
+    .instagran a {
+        text-decoration: none;
+        padding: 5px;
+        background-color: #f08a9d;
+        border-radius: 8px;
+        color: white;
+    }
+
+    img {
+        width: 180px;
+    }
+
+    #contenedor {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    #contenedor1 {
+        display: flex;
+        justify-content: flex-start;
+    }
+
+    #contenedor2 {
+        display: flex;
+        justify-content: flex-end;
+        flex-direction: column;
+    }
+
+    #contenedor2 img {
+        width: 20px;
+    }
+
+    #contenedor2 a {
+        text-decoration: none;
+    }
+
+   @media (max-width: 480px) {
+        header {
+            padding: 15px 10px;
+        }
+
+        #contenedor {
+            flex-direction: column; 
+            align-items: center;
+            text-align: center;
+            gap: 15px;
+        }
+
+        #contenedor1 {
+            justify-content: center;
+            width: 100%;
+        }
+
+        #contenedor1 p {
+            font-size: 11px;
+            white-space: nowrap; 
+        }
+
+        #contenedor1 br {
+            display: none;
+        }
+
+        #contenedor2 {
+            width: 100%;
+            flex-direction: row; 
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .whatsapp, .mercadopago, .instagran {
+            margin: 0;
+            padding: 0;
+            justify-content: center;
+        }
+
+        .whatsapp a, .mercadopago a, .instagran a {
+            font-size: 10px;
+            padding: 6px 8px;
+        }
+
+        #contenedor2 img {
+            width: 16px; 
+        }
+    }
+</style>
+
+<body>
+    <header>
+        <div id="contenedor">
+            <div id="contenedor1">
+                <table>
+                    <tr>
+                        <td><img src="logoo.png" alt="logo"></td>
+                        <td>
+                            <h1 class="indie-flower-regular"> Tabuve</h1>
+                        </td>
+
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <p>Las mejores prendas de ropa y calzados <br> para regalar o autoregalarte</p>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div id="contenedor2">
+                <div class="whatsapp">
+                    <table>
+                        <tr>
+                            <td><img src="WhatsApp_icon.png" alt=""></td>
+                            <td><a href="https://wa.me/5493517332097?text=Hola%2C%20quiero%20hacer%20una%20consulta">
+                                Consultanos por WhatsApp</a></td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="mercadopago">
+                    <table>
+                        <tr>
+                            <td><img src="mp.png" alt=""></td>
+                            <td><a href="https://link.mercadopago.com.ar/laxxxxxxxxxx" target="_blank">Pagar con Mercado
+                                    Pago</a></td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="instagran">
+                    <table>
+                        <tr>
+                            <td> <img src="imsta.jpg" alt="Instagram"></td>
+                            <td><a href="" target="_blank" rel="noopener noreferrer" class="ig-link">
+                                    Seguinos en Instagram
+                                </a></td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+    </header>
+    <main>
+        <div class="grid-productos">
+
+            <div class="producto">
+                <img src="ad.jpg" alt="Peluche Osito Clásico">
+                <div class="producto-info">
+                    <h2>Conjunto adidas</h2>
+                    <p>Corte clásico con pretina media
+                        Cierre frontal y cuello alto
+                        Parte Superior: Material Principal: 100% Poliéster</p>
+                    <span class="precio">$129.999</span>
+                    <button class="boton-comprar">Agregar al carrito</button>
+                </div>
+            </div>
+            <div class="producto">
+                <img src="ad.jpg" alt="Peluche Osito Clásico">
+                <div class="producto-info">
+                    <h2>Conjunto adidas</h2>
+                    <p>Corte clásico con pretina media
+                        Cierre frontal y cuello alto
+                        Parte Superior: Material Principal: 100% Poliéster</p>
+                    <span class="precio">$129.999</span>
+                    <button class="boton-comprar">Agregar al carrito</button>
+                </div>
+            </div>
+            <div class="producto">
+                <img src="ad.jpg" alt="Peluche Osito Clásico">
+                <div class="producto-info">
+                    <h2>Conjunto adidas</h2>
+                    <p>Corte clásico con pretina media
+                        Cierre frontal y cuello alto
+                        Parte Superior: Material Principal: 100% Poliéster</p>
+                    <span class="precio">$129.999</span>
+                    <button class="boton-comprar">Agregar al carrito</button>
+                </div>
+            </div>
+
+    </main>
+</body>
+
+</html>
